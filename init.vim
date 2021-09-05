@@ -13,18 +13,17 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
-"set cmdheight=1
+set cmdheight=1
 "set noshowmode
 set colorcolumn=120
 
-"set termguicolors
+set termguicolors
 "set norwrap
-set smartindent
+"set smartindent
 set relativenumber
 set laststatus=2
 "set cursorline
 "set cursorcolumn
-set updatetime=100
 
 "set foldmethod=indent   "fold based on indent
 "set foldnestmax=10    "deepest fold is 10 levels
@@ -39,6 +38,7 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " Powerline
@@ -111,33 +111,23 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --f
 Plug 'Chiel92/vim-autoformat'
 
 "Git integration
-"Plug 'mhinz/vim-signify'
-"source $HOME/AppData/Local/nvim/plugin-config/signify-config.vim
 Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-rhubarb'
 "Plug 'junegunn/gv.vim'
-Plug 'vim-scripts/vim-gitgutter'
-
+"Plug 'vim-scripts/vim-gitgutter'
+Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
-"Git integration config
-"let g:signify_sign_add               = '+'
-"let g:signify_sign_delete            = '_'
-"let g:signify_sign_delete_first_line = '‾'
-"let g:signify_sign_change            = '~'
-
-
-" I find the numbers disctracting
-"let g:signify_sign_show_count = 0
-"let g:signify_sign_show_text = 1
-
+set updatetime=100
 
 "snipmate
 let g:snipMate = {'snippet_version': 1}
 
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
+"let g:lightline = {}
+"let g:lightline.colorscheme = 'gruvbox'
 let g:airline_theme= 'biogoo'
 
 "nerdtree
@@ -153,7 +143,7 @@ let NERDTreeDirArrows=1
 let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx'
 
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = "medium"
+let g:gruvbox_contrast_dark = "dark"
 "highlight Normal ctermbg=Black
 
 let mapleader=" "
@@ -165,10 +155,20 @@ let g:indentLine_faster = 1
 
 
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
-let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
+"let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 
-" Cargar fuente Powerline y símbolos (ver nota)
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline#extensions#tabline#formatter = 'default'
+
+
+let g:gitgutter_terminal_reports_focus=0
+
+
+" Keys para guardar y salir
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
 
 "cerrar buffer
 nmap cl :bdelete<CR>
@@ -190,9 +190,6 @@ noremap <F3> :Autoformat<CR>
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
-" Keys para guardar y salir
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
 
 " Salir terminal
 tnoremap <Esc> <C-\><C-n>
@@ -207,3 +204,4 @@ nnoremap <silent> <right> :vertical resize +5<CR>
 nnoremap <silent> <left> :vertical resize -5<CR>
 nnoremap <silent> <up> :resize +5<CR>
 nnoremap <silent> <down> :resize -5<CR>
+
