@@ -113,7 +113,7 @@ Plug 'Chiel92/vim-autoformat'
 "Git integration
 Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-rhubarb'
-"Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim'
 "Plug 'vim-scripts/vim-gitgutter'
 Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 Plug 'nvim-lua/plenary.nvim'
