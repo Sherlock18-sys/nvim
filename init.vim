@@ -17,12 +17,12 @@ set cmdheight=1
 "set noshowmode
 set colorcolumn=120
 
-set termguicolors
+"set termguicolors
 "set norwrap
 "set smartindent
 set relativenumber
 set laststatus=2
-"set cursorline
+set cursorline
 "set cursorcolumn
 
 "set foldmethod=indent   "fold based on indent
@@ -56,7 +56,8 @@ source $HOME/AppData/Local/nvim/plugin-config/airline-config.vim
 
 " syntax
 Plug 'sheerun/vim-polyglot'
-
+"js
+"Plug 'yuezk/vim-js'
 
 " Tree
 Plug 'scrooloose/nerdtree'
@@ -90,7 +91,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source $HOME/AppData/Local/nvim/plugin-config/coc-config.vim
 
 "emmet
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 
 
 "Snippets
@@ -118,6 +119,12 @@ Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+
+"icons
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
 call plug#end()
 
@@ -159,7 +166,6 @@ let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como p
 
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
 let g:airline#extensions#tabline#formatter = 'default'
 
 
